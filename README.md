@@ -183,7 +183,7 @@ Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lam
 
 ## ✨ Benefícios da Solução
 
-*   **Escalabilidade automática: não importa quantas notas fiscais forem processadas, a arquitetura se ajusta automaticamente.
-*   **Baixo custo: paga-se apenas pelo uso (quantidade de requisições e tempo de execução).
-*   **Automação completa: desde o upload até a consulta via API.
-*   **Integração simples: os serviços da AWS trabalham de forma integrada e segura.
+*   Escalabilidade automática: não importa quantas notas fiscais forem processadas, a arquitetura se ajusta automaticamente.
+*   Baixo custo: paga-se apenas pelo uso (quantidade de requisições e tempo de execução).
+*   Automação completa: desde o upload até a consulta via API.
+*   Integração simples: os serviços da AWS trabalham de forma integrada e segura.
