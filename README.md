@@ -32,3 +32,41 @@ Ele suporta qualquer tipo de arquivo, como vídeos, áudios, imagens, documentos
 ---
 
 ✨ Com o Amazon S3, seus dados ficam sempre **protegidos, disponíveis e escaláveis** para qualquer necessidade.
+
+---
+
+# ⚡ AWS Lambda - Computação Serverless
+
+O **AWS Lambda** é um serviço de **computação serverless** que permite executar código em resposta a **eventos**, **sem a necessidade de gerenciar servidores**.  
+
+Assim que o código é enviado, o Lambda se encarrega de executar automaticamente e **escalar conforme a demanda**.
+
+---
+
+## 🚀 Vantagens do AWS Lambda
+
+- **Execução sob demanda:**  
+  O código é executado apenas quando necessário, respondendo a eventos específicos.
+
+- **Escalabilidade automática:**  
+  Ajusta a capacidade de execução automaticamente de acordo com o número de eventos.
+
+- **Custo eficiente:**  
+  Você paga apenas pelo tempo de execução e pela quantidade de solicitações processadas.
+
+- **Integração com serviços AWS:**  
+  Atua como um conector entre diversos serviços da AWS, como **S3**, **DynamoDB**, **API Gateway**, entre outros.
+
+---
+
+## 📌 Uso comum
+- Processamento de arquivos enviados para o **S3**.  
+- Execução de funções em resposta a mudanças em tabelas do **DynamoDB**.  
+- Criação de APIs serverless com **API Gateway**.  
+- Automação de fluxos de trabalho e tarefas recorrentes.  
+
+---
+
+✨ Com o **AWS Lambda**, você escreve apenas o código e a AWS cuida do resto: execução, escalabilidade e custo otimizado.
+
+---
