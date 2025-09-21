@@ -70,3 +70,70 @@ Assim que o código é enviado, o Lambda se encarrega de executar automaticament
 ✨ Com o **AWS Lambda**, você escreve apenas o código e a AWS cuida do resto: execução, escalabilidade e custo otimizado.
 
 ---
+
+# 🚀 Projeto Hands-On: AWS Lambda + S3 + DynamoDB + API Gateway
+
+Este repositório apresenta um **hands-on** (ou seja, um exercício prático, "mão na massa") com os serviços da **AWS**.  
+A ideia é aprender de forma prática como os serviços se conectam entre si para formar uma solução completa na nuvem.  
+
+---
+
+## 🎯 Objetivo do Projeto
+
+Criar um fluxo onde arquivos enviados para um bucket **S3** sejam automaticamente processados por uma **função Lambda** e os dados resultantes sejam armazenados em uma tabela **DynamoDB**.  
+Depois, outra função Lambda disponibilizará esses dados através de uma **API Gateway**, permitindo consulta via endpoint HTTP.
+
+---
+
+## 🔄 Fluxo do Projeto
+
+1. **Upload do arquivo (JSON ou CSV) para o S3**  
+   - O usuário envia um arquivo para o **bucket S3**.  
+   - Esse bucket é como uma “pasta” na nuvem, capaz de armazenar arquivos de forma segura.
+
+2. **Disparo automático da Lambda (Processamento)**  
+   - O envio do arquivo gera um **evento no S3**.  
+   - Esse evento aciona automaticamente uma **função Lambda** (em Python).  
+   - A função lê o conteúdo do arquivo e prepara os dados.
+
+3. **Gravação dos dados no DynamoDB**  
+   - A função Lambda salva os dados processados em uma tabela do **DynamoDB**.  
+   - O DynamoDB é um banco de dados NoSQL altamente escalável da AWS, ideal para armazenar informações estruturadas sem depender de servidores.
+
+4. **Consulta dos dados via API Gateway**  
+   - Uma segunda **função Lambda** será responsável por buscar os dados no DynamoDB.  
+   - Essa função é exposta através do **API Gateway**, que cria uma **API REST**.  
+   - Assim, qualquer aplicação ou usuário pode acessar os dados pelo navegador ou ferramentas como o Postman, usando apenas um link (endpoint).
+
+---
+
+## 📌 Arquitetura Resumida
+
+- **S3** → Recebe os arquivos enviados pelo usuário.  
+- **Lambda (1)** → Processa o conteúdo do arquivo.  
+- **DynamoDB** → Armazena os dados processados.  
+- **Lambda (2)** → Consulta os dados do DynamoDB.  
+- **API Gateway** → Exibe os dados processados via endpoint HTTP.  
+
+---
+
+## ✨ O que você vai aprender com esse projeto
+- O que significa **computação serverless** e como o Lambda funciona.  
+- Como criar um bucket no **S3** e trabalhar com eventos de upload.  
+- Como gravar e consultar informações em uma tabela **DynamoDB**.  
+- Como disponibilizar dados em tempo real através de uma **API Gateway**.  
+- Como conectar serviços da AWS para formar uma **arquitetura moderna e escalável**.  
+
+---
+
+## 🛠️ Pré-requisitos
+- Conta na **AWS** (pode usar o [Free Tier](https://aws.amazon.com/free/)).  
+- Conhecimentos básicos de **Python** (para entender as funções Lambda).  
+- Familiaridade mínima com a **console da AWS** ou com a **AWS CLI**.  
+
+---
+
+💡 Esse projeto é uma ótima forma de aprender, na prática, como diferentes serviços da AWS podem trabalhar juntos para criar soluções inteligentes, sem precisar gerenciar servidores.  
+
+
+---
