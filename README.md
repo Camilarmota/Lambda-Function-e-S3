@@ -135,5 +135,60 @@ Depois, outra função Lambda disponibilizará esses dados através de uma **API
 
 💡 Esse projeto é uma ótima forma de aprender, na prática, como diferentes serviços da AWS podem trabalhar juntos para criar soluções inteligentes, sem precisar gerenciar servidores.  
 
+---
+
+# 📝 Tarefas com Lambda e S3 HandsOn: Projeto de Processamento de Arquivos e Registro no DynamoDB
+
+## Visão Geral
+
+Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lambda e DynamoDB para o upload, processamento e registro de dados de arquivos. O objetivo é criar um sistema onde o usuário pode fazer upload de arquivos (JSON ou CSV) para um bucket S3, que por sua vez, dispara um processo automatizado para extrair e armazenar os dados em uma tabela DynamoDB. Além disso, uma API será disponibilizada via API Gateway para consulta dos dados registrados.
+
+## Caso de Uso Real: Sistema de Processamento de Notas Fiscais
+
+O diagrama abaixo ilustra um caso de uso real para este projeto: um sistema de processamento de notas fiscais.
+
+*   O usuário envia um arquivo JSON contendo informações de uma nota fiscal (número, cliente, valor, data, etc.).
+*   A Lambda lê e valida o arquivo, depois grava no DynamoDB os campos relevantes.
+
+## Fluxo do Projeto
+
+1.  **Upload do Arquivo:** O usuário faz upload de um arquivo (JSON ou CSV) para um bucket configurado no Amazon S3.
+2.  **Trigger S3 para Lambda:** Um evento configurado no S3 detecta o novo arquivo e dispara uma função AWS Lambda.
+3.  **Processamento da Lambda (Python):** A função Lambda (escrita em Python) é invocada. Ela lê o conteúdo do arquivo uploaded, processa os dados (por exemplo, validação, transformação) e os prepara para armazenamento.
+4.  **Registro no DynamoDB:** Após o processamento, a Lambda grava os dados extraídos em uma tabela no Amazon DynamoDB.
+5.  **API de Consulta (Lambda + API Gateway):** Uma segunda função Lambda será responsável por consultar a tabela do DynamoDB. Esta função será exposta ao mundo externo através de um Amazon API Gateway, permitindo que outros serviços ou aplicações consumam os dados registrados.
+
+## Componentes AWS Utilizados
+
+*   **Amazon S3:** Para armazenamento de objetos (arquivos JSON/CSV).
+*   **AWS Lambda:** Para executar código serverless em resposta a eventos (upload no S3, chamadas de API).
+*   **Amazon DynamoDB:** Um banco de dados NoSQL totalmente gerenciado para armazenar os dados processados.
+*   **Amazon API Gateway:** Para criar, publicar, manter, monitorar e proteger APIs RESTful que integram com as funções Lambda de consulta.
+
+## Como Começar (Passos Iniciais)
+
+*   **Configurar Bucket S3:** Crie um bucket S3 para receber os arquivos.
+*   **Criar Tabelas DynamoDB:** Defina a estrutura e crie as tabelas necessárias no DynamoDB.
+*   **Desenvolver Funções Lambda:** Escreva o código Python para as funções de processamento e consulta.
+*   **Configurar Triggers S3:** Configure os eventos no S3 para disparar a Lambda de processamento.
+*   **Configurar API Gateway:** Crie e configure o API Gateway para expor a Lambda de consulta.
 
 ---
+
+## Observações
+
+É recomendado criar uma IAM Role com permissões para Lambda acessar S3 e DynamoDB.
+
+Estruture os dados no DynamoDB de forma a permitir consultas eficientes (ex: chave primária por ID da nota fiscal).
+
+---
+
+✨ Benefícios da Solução
+
+Escalabilidade automática: não importa quantas notas fiscais forem processadas, a arquitetura se ajusta automaticamente.
+
+Baixo custo: paga-se apenas pelo uso (quantidade de requisições e tempo de execução).
+
+Automação completa: desde o upload até a consulta via API.
+
+Integração simples: os serviços da AWS trabalham de forma integrada e segura.
