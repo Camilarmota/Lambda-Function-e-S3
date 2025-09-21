@@ -173,7 +173,7 @@ Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lam
 
 ---
 
-## Observações
+## ✨ Observações
 
 * É recomendado criar uma IAM Role com permissões para Lambda acessar S3 e DynamoDB.
 
@@ -181,7 +181,7 @@ Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lam
 
 ---
 
-✨ ## Benefícios da Solução
+## ✨ Benefícios da Solução
 
 *   **Escalabilidade automática: não importa quantas notas fiscais forem processadas, a arquitetura se ajusta automaticamente.
 *   **Baixo custo: paga-se apenas pelo uso (quantidade de requisições e tempo de execução).
