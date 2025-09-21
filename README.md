@@ -1,5 +1,4 @@
-# Lambda-Function-e-S3
-Tarefas Automatizadas com Lambda Function e S3
+# Tarefas Automatizadas com Lambda Function e S3
 # ☁️ Amazon S3 - Armazenamento em Nuvem
 
 O **Amazon S3** (Simple Storage Service) é um serviço de armazenamento em nuvem da **AWS** que permite **armazenar e acessar dados** de forma **segura** e **escalável**.  
