@@ -139,7 +139,7 @@ Depois, outra função Lambda disponibilizará esses dados através de uma **API
 
 # ☁️ Tarefas com Lambda e S3 HandsOn: Projeto de Processamento de Arquivos e Registro no DynamoDB
 
-## 🌟 Visão Geral
+## 🌟 Sobre o projeto
 
 Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lambda e DynamoDB para o upload, processamento e registro de dados de arquivos. O objetivo é criar um sistema onde o usuário pode fazer upload de arquivos (JSON ou CSV) para um bucket S3, que por sua vez, dispara um processo automatizado para extrair e armazenar os dados em uma tabela DynamoDB. Além disso, uma API será disponibilizada via API Gateway para consulta dos dados registrados.
 
