@@ -101,7 +101,7 @@ Este projeto HandsOn demonstra uma arquitetura serverless utilizando AWS S3, Lam
 
 1.  **Upload do Arquivo:** O usuário faz upload de um arquivo (JSON ou CSV) para um bucket configurado no Amazon S3.
 2.  **Trigger S3 para Lambda:** Um evento configurado no S3 detecta o novo arquivo e dispara uma função AWS Lambda.
-3.  **Processamento da Lambda (Python):** A função Lambda (escrita em Python) é invocada. Ela lê o conteúdo do arquivo uploaded, processa os dados (por exemplo, validação, transformação) e os prepara para armazenamento. A função precisa de uma IAM Role com permissões de leitura no S3 (s3:GetObject) e escrita no DynamoDB (dynamodb:PutItem
+3.  **Processamento da Lambda (Python):** A função Lambda (escrita em Python) é invocada. Ela lê o conteúdo do arquivo uploaded, processa os dados (por exemplo, validação, transformação) e os prepara para armazenamento. A função precisa de uma IAM Role com permissões de leitura no S3 (s3:GetObject) e escrita no DynamoDB (dynamodb:PutItem / dynamodb:BatchWriteItem)
 4.  **Registro no DynamoDB:** Após o processamento, a Lambda grava os dados extraídos em uma tabela no Amazon DynamoDB.
 5.  **API de Consulta (Lambda + API Gateway):** Uma segunda função Lambda será responsável por consultar a tabela do DynamoDB. Esta função será exposta ao mundo externo através de um Amazon API Gateway, permitindo que outros serviços ou aplicações consumam os dados registrados.
 
